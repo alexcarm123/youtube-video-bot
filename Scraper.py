@@ -24,4 +24,3 @@ for a in res:
         print(title)
         print (link)
         f.writerow ([title,link])
-        
