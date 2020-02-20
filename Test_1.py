@@ -11,18 +11,18 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='!')
 
-@bot.command(name='babish')
+@bot.command(name='fails')
 async def babish_videos(ctx):
-    f=csv.DictReader(open('Babish_Videos.csv','r'))
+    f=csv.DictReader(open('Videos.csv','r'))
     vids=[]
 
     for row in f:
-        vids.append(row['Videos'])
+        vids.append(row['Link'])
 
     response = random.choice(vids)
     await ctx.send(response)
-#@client.event
+#@bot.event
 #async def on_ready():
-    #print(f'{client.user} has connected to Discord!')
+    #print(f'{bot.user} has connected to Discord!')
     
 bot.run(TOKEN)
